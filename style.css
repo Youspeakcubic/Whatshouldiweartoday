@@ -1,0 +1,31 @@
+html {
+  background-color: #F4D35E;
+}
+.container {
+  margin:auto;
+  margin-top: 10%;
+  top:50%;
+  width: 50%;
+  text-align: center;
+  background-color: #F95738;
+  padding:5%;
+  border-radius: 5%;
+  border: 3px #D8973C solid;
+}
+.title{
+      font-family: 'New Tegomin', serif;
+}
+.locTitle{
+      font-family: 'Source Sans Pro', sans-serif;
+}
+input{
+  border-radius: 5%;
+  font-size: 20px;
+}
+button{
+  border-radius: 5%;
+  font-size: 20px;
+}
+button:hover{
+  background-color: #D8973C;
+}

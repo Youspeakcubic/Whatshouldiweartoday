@@ -12,6 +12,29 @@ html {
   border-radius: 5%;
   border: 3px #D8973C solid;
 }
+.weatherContainer{
+  margin:auto;
+  margin-top: 10%;
+  top:50%;
+  width: 50%;
+  text-align: center;
+  background-color: #F95738;
+  padding:5%;
+  border-radius: 5%;
+  border: 3px #D8973C solid;
+  display:none;
+}
+.detailContainer{
+  float: left;
+  margin-top: 5%;
+  top:75%;
+  width: 50%;
+  text-align: center;
+  background-color: #F95738;
+  border-radius: 5%;
+  border: 3px #D8973C solid;
+  display:none;
+}
 .title{
       font-family: 'New Tegomin', serif;
 }
@@ -28,4 +51,14 @@ button{
 }
 button:hover{
   background-color: #D8973C;
+}
+ul{
+  display:block;
+  float: left;
+  width: 15%;
+  text-align: center;
+}
+li{
+  list-style: none;
+  padding-right: 5%;
 }

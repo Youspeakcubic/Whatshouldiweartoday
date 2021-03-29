@@ -9,7 +9,17 @@
     <title>What should i wear today?</title>
   </head>
   <body>
-    <div class="container">
+    <div class="weatherContainer" id ="weatherContainer">
+        <h1>What should i wear today?</h1>
+        <button class="submit" onclick="returnHome()">Enter another location</button>
+    </div>
+    <div class="detailContainer" id="detailContainer">
+      <h3>Weather Details</h3>
+      <div id="list">
+
+      </div>
+    </div>
+    <div class="container" id = "container">
       <h1 class="title">What should i wear today?</h1>
       <h3 class="locTitle">Enter your location:</h3>
       <input type=text class="inpLocation" id="LocationInput"></input>

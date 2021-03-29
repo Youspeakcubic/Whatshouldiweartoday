@@ -1,7 +1,7 @@
 const fetchData = () => {
   let locInput = document.getElementById("LocationInput").value;
   if (locInput == ""){
-    document.getElementById("LocationInput").placeholder = "Please enter a location"
+    document.getElementById("LocationInput").placeholder = "Please enter a location";
   }
   else {
   var url = new URL("https://api.openweathermap.org/data/2.5/weather?"),
@@ -13,11 +13,30 @@ const fetchData = () => {
   }
 }
 const distribute = (data) => {
-  console.log(data.main.temp);
-  console.log(data.main.temp_min);
-  console.log(data.main.temp_max);
-  console.log(data.main.humidity);
-  console.log(data.weather[0].main);
-  console.log(data.weather[0].description);
-  console.log(data.wind.speed);
+  let weatherData = {
+    temperature: data.main.temp,
+    minimum: data.main.temp_min,
+    maximum: data.main.temp_max,
+    humidity: data.main.humidity,
+    weather: data.weather[0].main,
+    weatherType: data.weather[0].description,
+    wind: data.wind.speed
+  }
+    document.getElementById("container").style.display = "none";
+    document.getElementById("weatherContainer").style.display = "block";
+    document.getElementById("detailContainer").style.display = "block";
+  for (const property in weatherData) {
+      let detailLi = document.createElement("h4");
+      let ul = document.createElement("UL");
+      console.log(`${property}: ${weatherData[property]}`);
+      detailLi.appendChild(document.createTextNode(`${property}: ${weatherData[property]}`));
+      ul.appendChild(detailLi);
+      document.getElementById("list").appendChild(ul)
+  }
+}
+const returnHome = () => {
+  document.getElementById("list").innerHTML = "";
+  document.getElementById("container").style.display = "block";
+  document.getElementById("weatherContainer").style.display = "none";
+  document.getElementById("detailContainer").style.display = "none";
 }

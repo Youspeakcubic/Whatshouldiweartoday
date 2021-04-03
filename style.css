@@ -1,45 +1,46 @@
 html {
-  background-color: #F4D35E;
+  background-image: url("background.jpg");
 }
 .container {
   margin:auto;
   margin-top: 10%;
-  top:50%;
+  top:10%;
   width: 50%;
   text-align: center;
   background-color: #F95738;
   padding:5%;
   border-radius: 5%;
   border: 3px #D8973C solid;
+  opacity: .85;
 }
 .weatherContainer{
   margin:auto;
   margin-top: 10%;
-  top:50%;
+  top:20%;
   width: 50%;
   text-align: center;
   background-color: #F95738;
   padding:5%;
   border-radius: 5%;
   border: 3px #D8973C solid;
-  display:none;
+  display: none;
+  opacity: .85;
 }
-.detailContainer{
-  float: left;
-  margin-top: 5%;
-  top:75%;
-  width: 50%;
-  text-align: center;
-  background-color: #F95738;
-  border-radius: 5%;
-  border: 3px #D8973C solid;
-  display:none;
+#summary{
+  width: 100%;
+  max-width: 100%;
 }
 .title{
       font-family: 'New Tegomin', serif;
 }
 .locTitle{
       font-family: 'Source Sans Pro', sans-serif;
+}
+.list {
+  display: flex; /*added*/
+  flex-direction: row;; /*added*/
+  width: 100%;
+  max-width: 100%;
 }
 input{
   border-radius: 5%;
@@ -56,9 +57,14 @@ ul{
   display:block;
   float: left;
   width: 15%;
-  text-align: center;
+  text-align:center;
 }
-li{
-  list-style: none;
+h3{
+  width: 100%;
+}
+h4{
+  float:left;
+  clear: left;
+  display: inline;
   padding-right: 5%;
 }

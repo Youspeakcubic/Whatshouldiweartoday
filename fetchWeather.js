@@ -19,23 +19,42 @@ const distribute = (data) => {
     maximum: data.main.temp_max,
     humidity: data.main.humidity,
     weather: data.weather[0].main,
-    weatherType: data.weather[0].description,
-    wind: data.wind.speed
   }
     document.getElementById("container").style.display = "none";
     document.getElementById("weatherContainer").style.display = "block";
-    document.getElementById("detailContainer").style.display = "block";
   for (const property in weatherData) {
-      let detailLi = document.createElement("h4");
-      let ul = document.createElement("UL");
+      let detailLi = document.createElement("li");
+      let listUL = document.createElement("UL");
       console.log(`${property}: ${weatherData[property]}`);
       detailLi.appendChild(document.createTextNode(`${property}: ${weatherData[property]}`));
-      ul.appendChild(detailLi);
-      document.getElementById("list").appendChild(ul)
+      listUL.appendChild(detailLi);
+      document.getElementById("list").appendChild(listUL)
   }
+  const detail = () => {
+    if (weatherData.temperature > 65 ) {
+      document.getElementById("summary").appendChild(document.createTextNode("The weather today is warm, wear something light."))
+    }
+    else if (weatherData.temperature < 65 ) {
+      document.getElementById("summary").appendChild(document.createTextNode("The weather today is cold, wear something heavy."))
+    }
+    if (weatherData.humidity > 50){
+      document.getElementById("summary").appendChild(document.createTextNode("Today is very humid, wear something breathable."))
+    }
+    else if (weatherData.humidity < 50) {
+      document.getElementById("summary").appendChild(document.createTextNode("Today is dry, wear something to keep you insulated, and drink plenty of water."))
+    }
+    if (weatherData.weather == "Clear") {
+      document.getElementById("summary").appendChild(document.createTextNode("The sky is clear, Expect to get a lot of sun today, remember to wear sunscreen."))
+    }
+    else if (weatherData.weather == "Cloudy") {
+      document.getElementById("summary").appendChild(document.createTextNode("The sky is cloudy, rain is possible."))
+    }
+  }
+  detail();
 }
 const returnHome = () => {
   document.getElementById("list").innerHTML = "";
+  document.getElementById("summary").innerHTML = "";
   document.getElementById("container").style.display = "block";
   document.getElementById("weatherContainer").style.display = "none";
   document.getElementById("detailContainer").style.display = "none";

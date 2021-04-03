@@ -36,12 +36,6 @@ html {
 .locTitle{
       font-family: 'Source Sans Pro', sans-serif;
 }
-.list {
-  display: flex; /*added*/
-  flex-direction: row;; /*added*/
-  width: 100%;
-  max-width: 100%;
-}
 input{
   border-radius: 5%;
   font-size: 20px;
